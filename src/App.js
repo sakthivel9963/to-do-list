@@ -61,6 +61,13 @@ class App extends Component {
             </div>
           </div>
         </div>
+        <div className="container">
+          <ul>
+            {this.state.to_do_list.map((key, index) => {
+              return <li key={index}>{key.value}</li>;
+            })}
+          </ul>
+        </div>
       </div>
     );
   }
