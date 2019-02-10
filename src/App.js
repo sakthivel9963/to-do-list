@@ -83,7 +83,7 @@ class App extends Component {
               return (
                 <li key={index}>
                   <input type="checkbox" name={index} id={index} onClick={event => this.checkbox(event, index)} />
-                  {key.value}
+                  <span style={{ textDecoration: key.checked ? 'line-through' : 'inherit' }}>{key.value}</span>
                 </li>
               );
             })}
