@@ -8,7 +8,7 @@ class App extends Component {
       to_do_list: [
         {
           value: 'Sakthivel',
-          checked: 0
+          checked: false
         }
       ]
     };
@@ -40,12 +40,27 @@ class App extends Component {
         ...this.state.to_do_list,
         {
           value: this.state.to_do,
-          checked: 0
+          checked: false
         }
       ],
       to_do: ''
     });
     //console.log(this.state.to_do_list);
+  }
+
+  /**
+   *
+   * @param {*} event will get the user trigger event
+   * @param {*} index will be the particular index in the list
+   */
+  checkbox(event, index) {
+    let list = [...this.state.to_do_list]; // making a copy of the list
+    list[index] = { ...list[index] }; // making copy of the object
+    list[index].checked = event.target.checked; // changing the value in the object
+    // update the state value with new array object
+    this.setState({
+      to_do_list: list
+    });
   }
 
   render() {
@@ -67,8 +82,8 @@ class App extends Component {
             {this.state.to_do_list.map((key, index) => {
               return (
                 <li key={index}>
-                  <input type="checkbox" name={index} id={index} />
-                  <label htmlFor={key.value}>{key.value}</label>
+                  <input type="checkbox" name={index} id={index} onClick={event => this.checkbox(event, index)} />
+                  {key.value}
                 </li>
               );
             })}

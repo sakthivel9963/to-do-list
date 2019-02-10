@@ -11,4 +11,5 @@
 - [x] Display all the **to-do-list** value in list
 - [x] Reset the input value after the value is added to list
 - [x] Add checkbox to the list values
-- [ ] On click the value the checked state properties should change
+- [x] On click the value the checked state properties should change
+- [ ] Show a line through for the checked value
