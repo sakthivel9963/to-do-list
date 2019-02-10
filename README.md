@@ -9,4 +9,6 @@
 - [x] Create a json value for the whole **to-do-list**
 - [x] Add the state value the whole json and create a new json value
 - [x] Display all the **to-do-list** value in list
-- [ ] Reset the input value after the value is added to list
+- [x] Reset the input value after the value is added to list
+- [x] Add checkbox to the list values
+- [ ] On click the value the checked state properties should change

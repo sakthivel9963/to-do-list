@@ -42,7 +42,8 @@ class App extends Component {
           value: this.state.to_do,
           checked: 0
         }
-      ]
+      ],
+      to_do: ''
     });
     //console.log(this.state.to_do_list);
   }
@@ -64,7 +65,12 @@ class App extends Component {
         <div className="container">
           <ul>
             {this.state.to_do_list.map((key, index) => {
-              return <li key={index}>{key.value}</li>;
+              return (
+                <li key={index}>
+                  <input type="checkbox" name={index} id={index} />
+                  <label htmlFor={key.value}>{key.value}</label>
+                </li>
+              );
             })}
           </ul>
         </div>
