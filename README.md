@@ -2,5 +2,6 @@
 
 ## Create Basic Working App
 
-- [x] create react js project
-- [] create input fied and submit button
+- [x] Create react js project
+- [x] Install bootstrap in the project and configure in the index.js file
+- [] Create input fied
