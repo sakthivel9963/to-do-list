@@ -13,7 +13,7 @@ class App extends Component {
    * To get the input value from the user and set the value in the state
    */
   getInput(event) {
-    console.log(event.target.value);
+    // console.log(event.target.value);
     this.setState({
       to_do: event.target.value
     });
