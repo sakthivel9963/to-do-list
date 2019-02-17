@@ -17,4 +17,4 @@
 
 ## Splitin the react project to different components
 
-- [] Creating new directory structure for the project
+- [ ] Creating new directory structure for the project
