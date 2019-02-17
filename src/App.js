@@ -63,6 +63,20 @@ class App extends Component {
     });
   }
 
+  /**
+   *
+   * @param {*} event will get the user trigger event
+   * @param {*} index will be the particular index in the list
+   */
+  delete(event, index) {
+    let list = [...this.state.to_do_list]; // making a copy of the list
+    list.splice(index, 1); // remove a value from the list
+    // update the state value with new array object after deleting the value from the list
+    this.setState({
+      to_do_list: list
+    });
+  }
+
   render() {
     return (
       <div className="App">
@@ -84,6 +98,9 @@ class App extends Component {
                 <li key={index}>
                   <input type="checkbox" name={index} id={index} onClick={event => this.checkbox(event, index)} />
                   <span style={{ textDecoration: key.checked ? 'line-through' : 'inherit' }}>{key.value}</span>
+                  <button className="btn btn-danger" onClick={event => this.delete(event, index)}>
+                    Delete
+                  </button>
                 </li>
               );
             })}

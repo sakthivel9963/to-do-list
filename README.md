@@ -13,4 +13,8 @@
 - [x] Add checkbox to the list values
 - [x] On click the value the checked state properties should change
 - [x] Show a line through for the checked value
-- [ ] Remove a value from the list
+- [x] Remove a value from the list
+
+## Splitin the react project to different components
+
+- [] Creating new directory structure for the project
