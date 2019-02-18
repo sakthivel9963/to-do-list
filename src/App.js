@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-
+import ToDoForm from './components/ToDoForm';
+import ToDoList from './components/ToDoList';
 class App extends Component {
   constructor(props) {
     super(props);
@@ -35,6 +36,7 @@ class App extends Component {
    *  state value should not be changed directly
    */
   onSubmit(event) {
+    event.preventDefault();
     this.setState({
       to_do_list: [
         ...this.state.to_do_list,
@@ -83,29 +85,8 @@ class App extends Component {
         <div className="my-5">
           <h1 className="text-center">To Do List App</h1>
         </div>
-        <div className="container">
-          <div className="input-group mb-3">
-            <input type="text" className="form-control" id="to_do" placeholder="Enter your text here" onChange={event => this.getInput(event)} value={this.state.to_do} />
-            <div className="input-group-append">
-              <input type="submit" className="btn btn-success" value="submit" onClick={event => this.onSubmit(event)} />
-            </div>
-          </div>
-        </div>
-        <div className="container">
-          <ul>
-            {this.state.to_do_list.map((key, index) => {
-              return (
-                <li key={index}>
-                  <input type="checkbox" name={index} id={index} onClick={event => this.checkbox(event, index)} />
-                  <span style={{ textDecoration: key.checked ? 'line-through' : 'inherit' }}>{key.value}</span>
-                  <button className="btn btn-danger" onClick={event => this.delete(event, index)}>
-                    Delete
-                  </button>
-                </li>
-              );
-            })}
-          </ul>
-        </div>
+        <ToDoForm to_do={this.state.to_do} getInput={this.getInput.bind(this)} onSubmit={this.onSubmit.bind(this)} />
+        <ToDoList to_do_list={this.state.to_do_list} checkbox={this.checkbox.bind(this)} delete={this.delete.bind(this)} />
       </div>
     );
   }

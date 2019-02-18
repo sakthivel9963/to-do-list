@@ -17,4 +17,9 @@
 
 ## Splitin the react project to different components
 
-- [ ] Creating new directory structure for the project
+- [x] Creating new directory structure for the project
+- [x] Spliting the code into components
+- [x] Seprate the form from the app
+- [x] Seprate the list from the app
+- [x] Bind a value to the higher order function
+- [ ] Some alternative way to bind the value to higher order function
