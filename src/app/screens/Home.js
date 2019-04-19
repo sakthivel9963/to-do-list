@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import ToDoForm from '../components/ToDoForm';
 import ToDoList from '../components/ToDoList';
+import Navbar from './Navbar';
 class App extends Component {
   constructor(props) {
     super(props);
