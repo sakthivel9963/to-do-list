@@ -22,4 +22,8 @@
 - [x] Seprate the form from the app
 - [x] Seprate the list from the app
 - [x] Bind a value to the higher order function
-- [ ] Some alternative way to bind the value to higher order function
+- [x] Some alternative way to bind the value to higher order function
+
+## Add Routing to the project
+
+- [ ] Creating the nav bar for the routing

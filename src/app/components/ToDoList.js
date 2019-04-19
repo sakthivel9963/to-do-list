@@ -1,15 +1,15 @@
 import React from 'react';
 
-export default function ToDoList(props) {
+const ToDoList = ({ to_do_list, checkbox, remove }) => {
   return (
     <div className="container">
       <ul>
-        {props.to_do_list.map((key, index) => {
+        {to_do_list.map((key, index) => {
           return (
             <li key={index}>
-              <input type="checkbox" name={index} id={index} onClick={event => props.checkbox(event, index)} />
+              <input type="checkbox" name={index} id={index} onClick={event => checkbox(event, index)} />
               <span style={{ textDecoration: key.checked ? 'line-through' : 'inherit' }}>{key.value}</span>
-              <button className="btn btn-danger" onClick={event => props.delete(event, index)}>
+              <button className="btn btn-danger" onClick={event => remove(event, index)}>
                 Delete
               </button>
             </li>
@@ -18,4 +18,6 @@ export default function ToDoList(props) {
       </ul>
     </div>
   );
-}
+};
+
+export default ToDoList;
