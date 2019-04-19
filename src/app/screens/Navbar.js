@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { Route, Link } from 'react-router-dom';
+
 import Home from './Home';
 import Feature from './Feature';
 import Pricing from './Pricing';
@@ -17,23 +19,28 @@ export default class Navbar extends Component {
           <div className="collapse navbar-collapse" id="navbarNav">
             <ul className="navbar-nav">
               <li className="nav-item active">
-                <a className="nav-link" href="#">
-                  Home <span className="sr-only">(current)</span>
-                </a>
+                <Link className="nav-link" to="/">
+                  Home
+                </Link>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="#">
-                  Features
-                </a>
+                <Link className="nav-link" to="/Feature">
+                  Feature
+                </Link>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="#">
+                <Link className="nav-link" to="/Pricing">
                   Pricing
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
         </nav>
+        <div className="content">
+          <Route exact path="/" component={Home} />
+          <Route path="/Feature" component={Feature} />
+          <Route path="/Pricing" component={Pricing} />
+        </div>
       </div>
     );
   }

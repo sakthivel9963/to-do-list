@@ -27,4 +27,5 @@
 ## Add Routing to the project
 
 - [x] Creating the nav bar for the routing
-- [ ] Installing the router package
+- [x] Installing the router package
+- [x] Routing the navbar to each page

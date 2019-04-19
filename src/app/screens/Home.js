@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import ToDoForm from '../components/ToDoForm';
 import ToDoList from '../components/ToDoList';
-import Navbar from './Navbar';
-class App extends Component {
+class Home extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -84,7 +83,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <div className="my-5">
+        <div className="my-2">
           <h1 className="text-center">To Do List App</h1>
         </div>
         <ToDoForm to_do={this.state.to_do} getInput={this.getInput} onSubmit={this.onSubmit} />
@@ -94,4 +93,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default Home;
