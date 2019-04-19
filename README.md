@@ -26,4 +26,5 @@
 
 ## Add Routing to the project
 
-- [ ] Creating the nav bar for the routing
+- [x] Creating the nav bar for the routing
+- [ ] Installing the router package
