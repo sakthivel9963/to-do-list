@@ -9,9 +9,9 @@ class Home extends Component {
       to_do_list: [
         {
           value: 'Sakthivel',
-          checked: false
-        }
-      ]
+          checked: false,
+        },
+      ],
     };
   }
 
@@ -20,10 +20,10 @@ class Home extends Component {
    * @param {*} event
    * To get the input value from the user and set the value in the state
    */
-  getInput = event => {
+  getInput = (event) => {
     // console.log(event.target.value);
     this.setState({
-      to_do: event.target.value
+      to_do: event.target.value,
     });
   };
 
@@ -35,17 +35,17 @@ class Home extends Component {
    *  then we will create the new array and push the value into the new array
    *  state value should not be changed directly
    */
-  onSubmit = event => {
+  onSubmit = (event) => {
     event.preventDefault();
     this.setState({
       to_do_list: [
         ...this.state.to_do_list,
         {
           value: this.state.to_do,
-          checked: false
-        }
+          checked: false,
+        },
       ],
-      to_do: ''
+      to_do: '',
     });
     //console.log(this.state.to_do_list);
   };
@@ -61,7 +61,7 @@ class Home extends Component {
     list[index].checked = event.target.checked; // changing the value in the object
     // update the state value with new array object
     this.setState({
-      to_do_list: list
+      to_do_list: list,
     });
   };
 
@@ -72,11 +72,10 @@ class Home extends Component {
    */
   delete = (event, index) => {
     let list = [...this.state.to_do_list]; // making a copy of the list
-    console.log(index);
     list.splice(index, 1); // remove a value from the list
     // update the state value with new array object after deleting the value from the list
     this.setState({
-      to_do_list: list
+      to_do_list: list,
     });
   };
 
@@ -86,8 +85,16 @@ class Home extends Component {
         <div className="my-2">
           <h1 className="text-center">To Do List App</h1>
         </div>
-        <ToDoForm to_do={this.state.to_do} getInput={this.getInput} onSubmit={this.onSubmit} />
-        <ToDoList to_do_list={this.state.to_do_list} checkbox={this.checkbox} remove={this.delete} />
+        <ToDoForm
+          to_do={this.state.to_do}
+          getInput={this.getInput}
+          onSubmit={this.onSubmit}
+        />
+        <ToDoList
+          to_do_list={this.state.to_do_list}
+          checkbox={this.checkbox}
+          remove={this.delete}
+        />
       </div>
     );
   }

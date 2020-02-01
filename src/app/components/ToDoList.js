@@ -7,9 +7,24 @@ const ToDoList = ({ to_do_list, checkbox, remove }) => {
         {to_do_list.map((key, index) => {
           return (
             <li key={index} className="mt-3">
-              <input type="checkbox" name={index} id={index} onClick={event => checkbox(event, index)} />
-              <span style={{ textDecoration: key.checked ? 'line-through' : 'inherit' }}>{key.value}</span>
-              <button className="btn btn-danger" onClick={event => remove(event, index)}>
+              <input
+                type="checkbox"
+                name={index}
+                id={index}
+                onChange={(event) => checkbox(event, index)}
+                checked={key.checked}
+              />
+              <span
+                style={{
+                  textDecoration: key.checked ? 'line-through' : 'inherit',
+                }}
+              >
+                {key.value}
+              </span>
+              <button
+                className="btn btn-danger"
+                onClick={(event) => remove(event, index)}
+              >
                 Delete
               </button>
             </li>
