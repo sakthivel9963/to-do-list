@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import ToDoForm from '../components/ToDoForm';
 import ToDoList from '../components/ToDoList';
+import '../style/style.css';
 class Home extends Component {
   constructor(props) {
     super(props);
@@ -90,11 +91,27 @@ class Home extends Component {
           getInput={this.getInput}
           onSubmit={this.onSubmit}
         />
-        <ToDoList
-          to_do_list={this.state.to_do_list}
-          checkbox={this.checkbox}
-          remove={this.delete}
-        />
+        <div className="row">
+          <div className="col-sm-6">
+            <div className="container border ml-3 container-background">
+              <h2 className="text-center p-2 bottom-border">To Do List</h2>
+              <ToDoList
+                to_do_list={this.state.to_do_list}
+                checkbox={this.checkbox}
+                remove={this.delete}
+              />
+            </div>
+          </div>
+          <div className="col-sm-6">
+            <div className="container">
+              <ToDoList
+                to_do_list={this.state.to_do_list}
+                checkbox={this.checkbox}
+                remove={this.delete}
+              />
+            </div>
+          </div>
+        </div>
       </div>
     );
   }
