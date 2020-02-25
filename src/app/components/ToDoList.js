@@ -4,16 +4,16 @@ const ToDoList = ({ to_do_list, checkbox, remove }) => {
   return (
     <React.Fragment>
       <ul style={{ listStyle: 'none' }} className="p-0">
-        {to_do_list.map((key, index) => {
+        {to_do_list.map((key) => {
           return (
-            <li key={index} className="mt-3 p-3 li-background white-font">
+            <li key={key.uuid} className="mt-3 p-3 li-background white-font">
               <div className="row">
                 <div className="custom-col-1 d-flex align-self-center">
                   <input
                     type="checkbox"
-                    name={index}
-                    id={index}
-                    onChange={(event) => checkbox(event, index)}
+                    name={key.uuid}
+                    id={key.uuid}
+                    onChange={(event) => checkbox(event, key.uuid)}
                     checked={key.checked}
                   />
                 </div>
@@ -30,7 +30,7 @@ const ToDoList = ({ to_do_list, checkbox, remove }) => {
                   <button
                     type="button"
                     className="close close-button"
-                    onClick={(event) => remove(event, index)}
+                    onClick={(event) => remove(event, key.uuid, key.checked)}
                   >
                     &times;
                   </button>
